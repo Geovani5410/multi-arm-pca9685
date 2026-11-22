@@ -1,5 +1,5 @@
 # Cómo entender la estructura de este proyecto
-
+hola peralta
 Esta guía está pensada para que cualquiera del equipo, al abrir el repositorio
 por primera vez, sepa en qué archivo debe trabajar y cuáles nunca debe tocar.
 Léela en orden la primera vez; después solo necesitarás el Paso 2 como
