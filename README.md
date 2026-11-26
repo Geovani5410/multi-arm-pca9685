@@ -198,10 +198,7 @@ void loop() {
 | | Fin de carrera avance / retroceso | 32 / 33 |
 | Motor B (L298N canal B) | ENB / IN3 / IN4 | 23 / 18 / 5 |
 | Relevadores (4 → 5 electroimanes) | RELE1–4 | 4, 13, 14, 19 |
-| Paro de emergencia físico | E-STOP | 34 (requiere pull-up externo) |
 
-> Si el diagrama eléctrico del equipo ya tiene asignados otros números de
-> pin, avisa para ajustar esta tabla y el código correspondiente.
 
 
 
