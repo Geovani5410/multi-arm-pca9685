@@ -1,4 +1,5 @@
 #include "RutinaRunner.h"
+#include "SerialReporter.h"
 
 namespace RutinaRunner {
 
@@ -27,6 +28,14 @@ void ejecutar(BrazoRobotico* grupo[], uint8_t cantidad,
     }
 
     BrazoRobotico::moverGrupoSincronizado(grupo, cantidadSegura, n1, n2, n3, pasosPorTramo, msPorPaso);
+
+    // Avisa al HMI (uno por brazo) que esta postura ya se alcanzó.
+    // Se reporta el ángulo lógico (el mismo que ve la simulación 3D), no el
+    // pulso físico con espejo aplicado -- BrazoRobotico resuelve eso solo
+    // para el hardware, el HMI dibuja siempre en lógico.
+    for (uint8_t i = 0; i < cantidadSegura; i++) {
+      reportarMovimiento(grupo[i]->getNombre(), postura);
+    }
 
     if (postura.pausaMs > 0) {
       delay(postura.pausaMs);
